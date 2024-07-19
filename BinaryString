@@ -10,6 +10,7 @@ int OperationsBinaryString(const string &str) {
 
     for (size_t i = 1; i < str.size(); i += 2) {
         char op = str[i];
+        //the char at i+1 index is a number which we want as an int so we substract it to the char '0';ie indirectly susbtracting ASCII value and getting the integer value of that char
         int num = str[i + 1] - '0';
 
         if (op == 'A')
