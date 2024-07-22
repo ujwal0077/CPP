@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+int calc(int arr[],int n)
+{
+    int ans=0;
+    int x=n;
+    while(n>0)
+    {
+        ans=ans+n*3;
+        n--;
+    }
+    return ans-x;
+}
+int main()
+{
+    int n;
+    cin>>n;
+    int arr[n];
+    cout<<calc(arr,n);
+}
