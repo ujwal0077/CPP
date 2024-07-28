@@ -1,0 +1,31 @@
+//AUTOBOIGRAPHY NUMBER
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int FindAutoCount(string n) {
+    if (n.empty()) return 0;
+    
+    int len = n.size();
+    vector<int> count(10, 0);
+    
+    for (char c : n) {
+        count[c - '0']++;
+    }
+    
+    for (int i = 0; i < len; i++) {
+        if (count[i] != n[i] - '0') {
+            return 0;
+        }
+    }
+    
+    set<char> distinctNumbers(n.begin(), n.end());
+    return distinctNumbers.size();
+}
+
+int main() {
+    string n;
+    cin >> n;
+    cout << FindAutoCount(n);
+    return 0;
+}
